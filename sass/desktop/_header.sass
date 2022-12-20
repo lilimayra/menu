@@ -1,0 +1,63 @@
+.header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    transition: 1s
+    z-index: 100
+    &--background
+        background: #fcfcfc
+    &__logo
+        width: 8rem
+    &__open
+        display: none
+    &__close
+        display: none
+    .container
+        display: flex
+        justify-content: space-between
+    .nav
+        display: flex
+        &__ul
+            display: flex
+            align-items: center
+            gap: 1rem
+        &__link
+            font-size: 1rem
+        &__container-button
+            display: none
+        &__container-links
+            display: flex
+            justify-content: center
+            align-items: center
+        
+        &__link
+            position: relative
+
+        &__link::before, &__link::after
+            content: ''
+            position: absolute
+            top: 0
+            bottom: 0
+            width: 2px
+            background-color: #fc2f70
+            transform: scaleY(0)
+            transition: transform 0.5s ease
+
+        &__link::before
+            left: -8px
+            transform-origin: center top
+
+        span:hover::before
+            transform-origin: center bottom
+            transform: scaleY(1)
+
+        &__link::after
+            right: -8px
+            transform-origin: center bottom
+
+        &__link:hover::after
+            transform-origin: center top
+            transform: scaleY(1)
+        &__nombre-contenedor, &__puesto-contenedor, &__localizacion-contenedor
+            display: none
